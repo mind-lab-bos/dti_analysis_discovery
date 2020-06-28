@@ -1,0 +1,11 @@
+library(reshape2)
+
+FA_multiple_tracts <- melt(SPSSwithFA_newROIs, id.vars="PartID", measure.vars = c('canonicalleftPCG_leftSTGp_FA_Mean', 'canonicalleftPCG_leftSTGp_L1_Mean', 'canonicalleftPCG_leftSTGp_RD_Mean', 'canonicalleftPCG_leftSTGp_MO_Mean'))
+
+Musicianship$PartID <- gsub("sub", "", Musicianship$PartID)
+
+Musicianship$PartID <- gsub("_1", "", Musicianship$PartID)
+
+FA_multiple_tracts_final <- merge(FA_multiple_tracts, Musicianship, by="PartID", all=TRUE)
+
+ggplot(data=subset(FA_multiple_tracts_final, !is.na(pre_play_an_instrument))) + geom_boxplot(aes(x=pre_play_an_instrument, y=value, fill=variable)) + ggtitle("Canonical Left Arcuate Fasciculus Mean Values By Musicianship") + xlab("Musicianship") + ylab("Canonical Left Arcuate Fasciculus Mean Values") + theme(plot.title = element_text(hjust = 0.5))
