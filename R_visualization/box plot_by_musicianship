@@ -1,0 +1,1 @@
+boxplot(SPSSwithFA_newROIs$canonicalleftPCG_leftSTGp_FA_Mean ~ SPSSwithFA_newROIs$pre_play_an_instrument, ylab="Canonical Left Arcuate Fasciculus Mean", xlab="Musicianship", col=c('gray', 'dark red'), names=c("Nonmusician", "Musician"), main="Canonical Left Arcuate Fasciculus FA Mean By Musicianship")
