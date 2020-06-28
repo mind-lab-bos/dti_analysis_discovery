@@ -63,6 +63,7 @@ do
 	done	
 done	
 
+#Write scalars into file
 for subject in $subjects
 do
 	echo "Now computing fslstats for $subject"
