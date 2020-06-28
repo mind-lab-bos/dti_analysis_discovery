@@ -13,7 +13,7 @@ source /shared/centos7/fsl/6.0.0/etc/fslconf/fsl.sh
 
 export FSLOUTPUTTYPE=NIFTI_GZ
 
-#subject name variable
+#subject name variable and tract variable is initialized
 
 cd /work/mindlab/Projects/fitkids2mus/probtrackx/finalbedpostx_withSPSS/
 
