@@ -10,6 +10,7 @@ inputDir=/home/chen.yae/bedpostx
 ## directory, with variable "$PWD". 
 workDir=/home/chen.yae/bedpostx
 
+#Go to where the files are sitting for bedpostx
 cd $inputDir
 
 ## Get the list of directories to analyze:
