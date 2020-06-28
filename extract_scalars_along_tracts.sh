@@ -50,6 +50,7 @@ do
 	done
 done 
 
+#Do the same for musicians and nonmusicians
 for musician in $musicians
 do
 	echo "warping group tracts to individual space for $musician"
