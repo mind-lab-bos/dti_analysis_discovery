@@ -13,3 +13,14 @@ Terminal: the main program you will use to connect to the cluster and run comman
 Filezilla (https://filezilla-project.org): a free tool you can use to easily transfer/view files in a GUI format instead of using the terminal for everything. To use it, login with your Host as username@discovery.neu.edu or username@xfer.discovery.neu.edu for file transfer. The username will be automatically filled. Type in your password and use port 22. Then click "Quickconnect" to connect!
 
 FSL: this is the program you will be using to analyze DTI scans. FSLeyes (type "fsleyes" in terminal if you have FSL downloaded) is what you will be using, so I recommend downloading FSL on your local computer as well to run FSLeyes.
+
+# The process I used
+
+- Run preprocessing (bet, dtifit, tbss). This is straightforward and Roger has some scripts on this as well. This includes tbss_1_preproc, tbss_2_reg, tbss_3_postreg, and tbss_4_prestats
+- Run bedpostx
+- Decide on and generate ROIs
+- Run flirt/fnirt/invwarp/applywarp to move ROIs to each subject's native space. This is included in my template.probtractx pipeline
+- Run probtrackx! Average the tracts to and from ROIs and threshold them (I used top 90% of connections)
+- Generate summed/average FA/average intensity images
+- Extract scalars for further analyses
+- Visualize using R
