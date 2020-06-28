@@ -1,0 +1,5 @@
+p <- ggplot(SPSSwithFA_newROIs, aes(x=pre_play_an_instrument, y=canonicalleftPCG_leftSTGp_FA_Mean, fill=pre_play_an_instrument)) + geom_violin(trim=FALSE) +ggtitle("Canonical Left Arcuate Fasciculus FA Mean By Musicianship") + xlab("Musicianship") + ylab("Canonical Left Arcuate Fasciculus FA Mean") + scale_x_discrete(labels=c('Nonmusician', 'Musician'))
+
+p + geom_dotplot(binaxis='y', stackdir='center', dotsize=1) + scale_fill_manual(values=c("gray", "darkred"))  + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) 
+
+p + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.6) + scale_fill_manual(values=c("gray", "darkred"))  + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) +ylim(0.05, 0.375)
