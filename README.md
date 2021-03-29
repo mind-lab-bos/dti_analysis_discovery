@@ -24,3 +24,7 @@ FSL: this is the program you will be using to analyze DTI scans. FSLeyes (type "
 - Generate summed/average FA/average intensity images
 - Extract scalars for further analyses
 - Visualize using R
+
+# Files in this respository
+
+extractscalarsforR.sh extract individual tracts (NOT canonical masked images) onto each scalar image and extracts scalars in a txt file where the first line consists of headers.
