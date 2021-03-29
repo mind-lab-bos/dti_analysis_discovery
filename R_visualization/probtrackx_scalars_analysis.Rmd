@@ -1,0 +1,47 @@
+---
+title: "probtrackx_scalars_analysis"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Merge SPSS and tract scalar data using subject ID as the merging column
+library(foreign)
+dataset = read.spss("FK_Dem_wCorrectedFitnessBMI_music.sav", use.value.labels=TRUE, to.data.frame=TRUE)
+dataset$PartID <- gsub("FKII", "", dataset$PartID)
+FAdataset <- read.table("tractforR.txt", sep="", header=TRUE)
+FAdataset$PartID <- gsub("sub", "", FAdataset$PartID)
+FAdataset$PartID <- gsub("_1", "", FAdataset$PartID)
+dataset_with_FAdataset <- merge(dataset, FAdataset, by="PartID", all=TRUE)
+# Aggregate the file which has multiple rows for each subject
+ write.table(dataset_with_FAdataset, "SPSS_with_FA_dataset", sep="\t")
+# OR aggregate via Excel. Open the dataset_with_Fadataset.txt in excel. To aggregate it, open a new workbook within the file (where the aggregated file will go) and click Data > Consolidate. Make sure the function is set to "Sum" and select all the cells from the original, unaggregated workbook. Click the + to add it, and check BOTH "Top row" and "Left column" (PartID should be in the left column and the top row should be the headers). Then delete the unaggregated workbook, save it in Excel, and open the excel in SPSS!
+
+```
+
+```{r message=FALSE, warning=FALSE}
+# Load data in RStudio
+data <- read_excel("C:/Users/yaenc/OneDrive - Northeastern University/THIRD YEAR/PROFESSIONAL/MIND Lab/FitKids/SPSSwithFA/Final_SPSSwithFAdata.xlsx")
+# Load libraries of interest
+library(ggplot2)
+library(Hmisc)
+```
+
+```{r message=FALSE, warning=FALSE}
+musicians_subset <- data[ which(data$pre_play_an_instrument=='1'),]
+nonmusicians_subset <- data[ which(data$pre_play_an_instrument=='0'),]
+library(plyr)
+count(nonmusicians_subset$leftPCG_leftSTGp_FA_Mean)
+count(musicians_subset$leftPCG_leftSTGp_FA_Mean)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Make violin plot of left AF Mean by musicianship
+p <- ggplot(data, aes(x=factor(pre_play_an_instrument), y=leftPCG_leftSTGp_FA_Mean, fill=factor(pre_play_an_instrument))) + geom_violin(trim=FALSE) +ggtitle("Left Arcuate Fasciculus FA Mean By Musicianship") + xlab("Musicianship") + ylab("Left Arcuate Fasciculus FA Mean") + scale_x_discrete(labels=c('Nonmusician', 'Musician'))
+
+# Add dot distribution
+p + geom_dotplot(binaxis='y', stackdir='center', dotsize=1, fill='white') + scale_fill_manual(values=c("gray", "darkred"))  + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) 
+```
