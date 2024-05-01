@@ -63,6 +63,37 @@ ggplot(data=WJIII_df, aes(x=pre_or_post, y=standard_score_mean, group= group, co
 dev.off()
 
 
+** Original Data Pre KTEA Subtests (Violin plots split by Musicianship) **
+	
+library(tidyverse)
+library(plyr)
+DF = ddply(OriginalData_Pre_KTEA_For_R, c("pre_play_an_instrument", "subtest"), summarize, standard_score_mean = mean(standard_score, na.rm = T), standard_score_sd=sd(standard_score, na.rm = T), standard_score_sem = sd(standard_score, na.rm=T)/sqrt(length(standard_score)))	
+DF2 <- DF %>%
++     select(subtest, standard_score_sem)
+merged = left_join(OriginalData_Pre_KTEA_For_R, DF, by = c("subtest", "pre_play_an_instrument"))
+png("OriginalData_Pre_KTEAII_SS.png", width = 300, height = 125, units='mm', res = 300)
+ggplot(merged, aes(x=subtest, y=standard_score, fill=as.factor(pre_play_an_instrument))) + geom_split_violin(trim = TRUE) + xlab("") + ylab("Standard Score") + scale_fill_manual(values=c("gray", "maroon")) + scale_x_discrete(guide = guide_axis(angle = 55)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + geom_errorbar(aes(ymin = standard_score_mean-standard_score_sem, ymax = standard_score_mean+standard_score_sem), size=0.5, color="black", width=.4, position = position_dodge(width = .5)) + geom_point(aes(x = subtest, y = standard_score_mean), color="black", shape=21, stroke = 1.5, position = position_dodge(width = .5), size=1) + geom_point(aes(x = subtest, y = standard_score_mean), color="white", position = position_dodge(width = .5), size=1) + ggtitle("KTEA II Subtest Standard Scores by Musical Training")	
+dev.off
+
+
+
+**Original Data Pre WJ III Subtests**
+
+DF_WJIII = ddply(OriginalData_Pre_WJIII_For_R, c("pre_play_an_instrument", "subtest"), summarize, standard_score_mean = mean(standard_score, na.rm = T), standard_score_sd=sd(standard_score, na.rm = T), standard_score_sem = sd(standard_score, na.rm=T)/sqrt(length(standard_score)))
+DF2_WJIII <- DF_WJIII %>% select(subtest, standard_score_sem)
+merged_WJIII = left_join(OriginalData_Pre_WJIII_For_R, DF_WJIII, by = c("subtest", "pre_play_an_instrument"))
+png("OriginalData_Pre_WJIII_SS.png", width = 300, height = 125, units='mm', res = 300)
+ggplot(merged_WJIII, aes(x=subtest, y=standard_score, fill=as.factor(pre_play_an_instrument))) + geom_split_violin(trim = TRUE) + xlab("") + ylab("Standard Score") + scale_fill_manual(values=c("gray", "maroon")) + scale_x_discrete(guide = guide_axis(angle = 55)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + geom_errorbar(aes(ymin = standard_score_mean-standard_score_sem, ymax = standard_score_mean+standard_score_sem), size=0.5, color="black", width=.4, position = position_dodge(width = .5)) + geom_point(aes(x = subtest, y = standard_score_mean), color="black", shape=21, stroke = 1.5, position = position_dodge(width = .5), size=1) + geom_point(aes(x = subtest, y = standard_score_mean), color="white", position = position_dodge(width = .5), size=1) + ggtitle("WJ III Subtest Standard Scores by Musical Training")
+dev.off()
+
+
+
+**Original Data OSPAN # has 30 bins**
+
+png("OriginalData_Pre_OSPAN_SS.png", width = 150, height = 125, units='mm', res = 300)
+ggplot(merged_OSPAN, aes(x=subtest, y=standard_score, fill=as.factor(pre_play_an_instrument))) + geom_split_violin(trim = TRUE) + xlab("") + ylab("OSPAN Partial Credit Unit Score") + scale_fill_manual(values=c("gray", "maroon")) + scale_x_discrete(breaks = 1:2, labels=c('Nonmusician', 'Musician')) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))  + ggtitle("OSPAN PCU by Musical Training") + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.75, position = position_dodge(width = .5)) 
+dev.off()
+
 
 **Scatterplot by Age**
 ggplot(SPSSwithFA_newROIs, aes(x=Pre_Age, y=canonicalleftPCG_leftSTGp_MO_Mean, colour=SPSSwithFA_newROIs$pre_play_an_instrument)) + geom_point() + geom_smooth(method=lm) + xlab("Age") + ylab("Canonical Left Arcuate Fasciculus MO Mean") + ggtitle("Canonical Left Arcuate Fasciculus MO Mean By Age") + xlim(7.8, 10) + theme(plot.title = element_text(hjust = 0.5)) + scale_color_manual(values=c('gray', 'dark red')) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5))
