@@ -1,0 +1,136 @@
+**Scalars vs. Cognitive Composites**
+
+png("LeftAFFA_KTEAReadingComposite.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_ReadingComposite_StandardScore, y=canonicalleftPCG_leftSTGp_FA_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("KTEA II Reading Composite Standard Score") + ylab("Canonical Left Arcuate Fasciculus FA Mean") + ggtitle("Canonical Left Arcuate Fasciculus FA Mean By KTEA II Reading Composite Standard Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("LeftAFRD_KTEAReadingComposite.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_ReadingComposite_StandardScore, y=canonicalleftPCG_leftSTGp_RD_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("KTEA II Reading Composite Standard Score") + ylab("Canonical Left Arcuate Fasciculus RD Mean") + ggtitle("Canonical Left Arcuate Fasciculus RD Mean By KTEA II Reading Composite Standard Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("LeftAFFA_OSPAN.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_OSPAN_PCU, y=canonicalleftPCG_leftSTGp_FA_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("OSPAN Partial Credit Unit Score") + ylab("Canonical Left Arcuate Fasciculus FA Mean") + ggtitle("Canonical Left Arcuate Fasciculus FA Mean By OSPAN Partial Credit Unit Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("LeftAFRD_OSPAN.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_OSPAN_PCU, y=canonicalleftPCG_leftSTGp_RD_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("OSPAN Partial Credit Unit Score") + ylab("Canonical Left Arcuate Fasciculus RD Mean") + ggtitle("Canonical Left Arcuate Fasciculus RD Mean By OSPAN Partial Credit Unit Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("RightAFMO_OSPAN.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_OSPAN_PCU, y=canonicalrightPCG_rightSTGp_MO_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("OSPAN Partial Credit Unit Score") + ylab("Canonical Right Arcuate Fasciculus MO Mean") + ggtitle("Canonical Right Arcuate Fasciculus MO Mean By OSPAN Partial Credit Unit Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("RightAFRD_OSPAN.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_OSPAN_PCU, y=canonicalrightPCG_rightSTGp_RD_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("OSPAN Partial Credit Unit Score") + ylab("Canonical Right Arcuate Fasciculus RD Mean") + ggtitle("Canonical Right Arcuate Fasciculus RD Mean By OSPAN Partial Credit Unit Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("RightAFMD_OSPAN.png", width = 250, height = 150, units='mm', res = 300)
+ ggplot(SPSSwithFA_newROIs, aes(x=Pre_OSPAN_PCU, y=canonicalrightPCG_rightSTGp_MD_Mean, colour=as.factor(pre_play_an_instrument))) + scale_color_manual(values=c('dark gray', 'maroon')) + geom_point() + geom_smooth(method=lm) + xlab("OSPAN Partial Credit Unit Score") + ylab("Canonical Right Arcuate Fasciculus MD Mean") + ggtitle("Canonical Right Arcuate Fasciculus MD Mean By OSPAN Partial Credit Unit Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("LeftAFFA_WJIIIGeneralIntelligence.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_WJ_GeneralIntellStand_SS, y=canonicalleftPCG_leftSTGp_FA_Mean, colour=as.factor(pre_play_an_instrument))) + geom_point() + scale_color_manual(values=c('dark gray', 'maroon')) + geom_smooth(method=lm) + xlab("WJ III General Intelligence Standard Score") + ylab("Canonical Left Arcuate Fasciculus FA Mean") + ggtitle("Canonical Left Arcuate Fasciculus FA Mean By WJ III General Intelligence Standard Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+png("LeftAFRD_WJIIIGeneralIntelligence.png", width = 250, height = 150, units='mm', res = 300)
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_WJ_GeneralIntellStand_SS, y=canonicalleftPCG_leftSTGp_RD_Mean, colour=as.factor(pre_play_an_instrument))) + geom_point() + scale_color_manual(values=c('dark gray', 'maroon')) + geom_smooth(method=lm) + xlab("WJ III General Intelligence Standard Score") + ylab("Canonical Left Arcuate Fasciculus RD Mean") + ggtitle("Canonical Left Arcuate Fasciculus RD Mean By WJ III General Intelligence Standard Score") + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+dev.off()
+
+
+
+**Pre and Post KTEA**
+png("PrePost_MusicianshipPA_KTEA_SS_Mean.png", width = 250, height = 200, units='mm', res = 300)
+ggplot(data=DF, aes(x=pre_or_post, y=standard_score_mean, group= group, colour= group)) + facet_wrap(~subtest, scales="free_x") + geom_line(aes(color=group, linetype=group), size=1) + geom_pointrange(aes(ymin = standard_score_mean+standard_score_sem_min, ymax = standard_score_mean+standard_score_sem)) + scale_color_manual(values = c("darkred", "darkred", "grey", "grey")) + scale_linetype_manual(values = c(rep("solid", 1), rep("dotted", 1), rep("solid", 1), rep("dotted", 1))) +  theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + scale_x_discrete(limits=rev) + xlab("KTEA II Subtest") + ylab("Standard Score Mean")
+
+OR
+
+png("PrePost_MusicianshipPA_KTEA_SS_Mean_Grid.png", width = 450, height = 100, units='mm', res = 300)
+ggplot(data=DF, aes(x=pre_or_post, y=standard_score_mean, group= group, colour= group)) + facet_grid(~subtest, scales="free_x", labeller=label_wrap_gen(width=10)) + geom_line(aes(color=group, linetype=group), size=1) + geom_pointrange(aes(ymin = standard_score_mean+standard_score_sem_min, ymax = standard_score_mean+standard_score_sem)) + scale_color_manual(values = c("darkred", "darkred", "grey", "grey")) + scale_linetype_manual(values = c(rep("solid", 1), rep("dotted", 1), rep("solid", 1), rep("dotted", 1))) +  theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + scale_x_discrete(limits=rev) + xlab("KTEA II Subtest") + ylab("Standard Score Mean")
+factor(subtest, levels=c('Achievement Composite','Math Composite','Reading Composite','Reading Fluency Composite', 'Written Language Composite', 'Math Concepts', 'Math Computation', 'Word Recognition', 'Word Recognition Fluency', 'Reading Comprehension', 'Written Expression', 'Listening Comprehension', 'Spelling', 'Decoding Fluency')
+
+
+
+
+**Pre and post WJ III**
+
+png("PrePost_MusicianshipPA_WJIII_SS_Mean.png", width = 250, height = 200, units='mm', res = 300)
+ggplot(data=WJIII_df, aes(x=pre_or_post, y=standard_score_mean, group= group, colour= group)) + facet_wrap(~subtest, scales="free_x") + geom_line(aes(color=group, linetype=group), size=1) + geom_pointrange(aes(ymin = standard_score_mean+standard_score_sem_min, ymax = standard_score_mean+standard_score_sem)) + scale_color_manual(values = c("darkred", "darkred", "grey", "grey")) + scale_linetype_manual(values = c(rep("solid", 1), rep("dotted", 1), rep("solid", 1), rep("dotted", 1))) +  theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + scale_x_discrete(limits=rev) + xlab("WJ III Subtest") + ylab("Standard Score Mean")
+
+OR 
+
+png("PrePost_WJIII_SS_Mean_Grid.png", width = 520, height = 100, units='mm', res = 300)
+ggplot(data=WJIII_df, aes(x=pre_or_post, y=standard_score_mean, group= group, colour= group)) + facet_grid(~subtest, scales="free_x", labeller=label_wrap_gen(width=10)) + geom_line(aes(color=group, linetype=group), size=1) + geom_pointrange(aes(ymin = standard_score_mean+standard_score_sem_min, ymax = standard_score_mean+standard_score_sem)) + scale_color_manual(values = c("darkred", "darkred", "grey", "grey")) + scale_linetype_manual(values = c(rep("solid", 1), rep("dotted", 1), rep("solid", 1), rep("dotted", 1))) +  theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) + scale_x_discrete(limits=rev) + xlab("WJ III Subtest") + ylab("Standard Score Mean")
+dev.off()
+
+
+
+**Scatterplot by Age**
+ggplot(SPSSwithFA_newROIs, aes(x=Pre_Age, y=canonicalleftPCG_leftSTGp_MO_Mean, colour=SPSSwithFA_newROIs$pre_play_an_instrument)) + geom_point() + geom_smooth(method=lm) + xlab("Age") + ylab("Canonical Left Arcuate Fasciculus MO Mean") + ggtitle("Canonical Left Arcuate Fasciculus MO Mean By Age") + xlim(7.8, 10) + theme(plot.title = element_text(hjust = 0.5)) + scale_color_manual(values=c('gray', 'dark red')) + theme(legend.position = "none", plot.title = element_text(hjust = 0.5))
+
+
+
+**Scatterplot by Intensity, excluding 0's**
+ggplot(SPSSwithFA_newROIs, aes(x=pre_hours_week_participating_in_musical_activities, y=canonicalrightPCG_rightSTGp_RD_Mean)) + geom_point() + geom_smooth(method=lm) + xlab("Hours Per Week of Musical Activities") + ylab("Canonical Right Arcuate Fasciculus RD Mean") + ggtitle("Canonical Right Arcuate Fasciculus RD Mean By Intensity") + theme(plot.title = element_text(hjust = 0.5)) + scale_x_continuous(limits = c(0.2, max(SPSSwithFA_newROIs$canonicalrightPCG_rightSTGp_RD_Mean)))
+
+
+
+**Boxplot by Musicianship**
+boxplot(SPSSwithFA_newROIs$canonicalleftPCG_leftSTGp_FA_Mean ~ SPSSwithFA_newROIs$pre_play_an_instrument, ylab="Canonical Left Arcuate Fasciculus Mean", xlab="Musicianship", col=c('gray', 'dark red'), names=c("Nonmusician", "Musician"), main="Canonical Left Arcuate Fasciculus FA Mean By Musicianship")
+
+
+
+**Combined Boxplots**
+library(reshape2)
+FA_multiple_tracts <- melt(SPSSwithFA_newROIs, id.vars="PartID", measure.vars = c('canonicalleftPCG_leftSTGp_FA_Mean', 'canonicalleftPCG_leftSTGp_L1_Mean', 'canonicalleftPCG_leftSTGp_RD_Mean', 'canonicalleftPCG_leftSTGp_MO_Mean'))
+Musicianship$PartID <- gsub("sub", "", Musicianship$PartID)
+Musicianship$PartID <- gsub("_1", "", Musicianship$PartID)
+FA_multiple_tracts_final <- merge(FA_multiple_tracts, Musicianship, by="PartID", all=TRUE)
+ggplot(data=subset(FA_multiple_tracts_final, !is.na(pre_play_an_instrument))) + geom_boxplot(aes(x=pre_play_an_instrument, y=value, fill=variable)) + ggtitle("Canonical Left Arcuate Fasciculus Mean Values By Musicianship") + xlab("Musicianship") + ylab("Canonical Left Arcuate Fasciculus Mean Values") + theme(plot.title = element_text(hjust = 0.5))
+
+
+
+**Violinplot by Musicianship**
+p <- ggplot(SPSSwithFA_newROIs, aes(x=as.factor(pre_play_an_instrument), y=canonicalleftPCG_leftSTGp_FA_Mean, fill=as.factor(pre_play_an_instrument))) + geom_violin(trim=FALSE) +ggtitle("Canonical Left Arcuate Fasciculus FA Mean By Musicianship") + xlab("Musicianship") + ylab("Canonical Left Arcuate Fasciculus FA Mean") + scale_x_discrete(labels=c('Nonmusician', 'Musician'))
+
+	For SD/Mean
+	p + stat_summary(fun.data=mean_sdl, mult=1, geom="pointrange") + scale_fill_manual(values=c("gray", "darkred"))  + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) 
+
+	For distribution with dots
+	p + geom_dotplot(binaxis='y', stackdir='center', dotsize=1) + scale_fill_manual(values=c("gray", "darkred"))  + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) 
+	
+  p + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.6) + scale_fill_manual(values=c("gray", "darkred"))  + theme(legend.position = "none", plot.title = element_text(hjust = 0.5)) +ylim(0.05, 0.375)
+
+
+
+**Combined Violinplots**
+p <- ggplot(data=subset(multiple_tracts_final, !is.na(pre_play_an_instrument))) + geom_violin(aes(x=pre_play_an_instrument, y=value, fill=variable)) + ggtitle("Canonical Right Arcuate Fasciculus Mean Values By Musicianship") + xlab("Musicianship") + ylab("Canonical Right Arcuate Fasciculus Mean Values") + theme(plot.title = element_text(hjust = 0.5))
+	
+
+
+**For FA along tracts**
+	- Make individual Excel sheet with separate tracts' FA values containing only PartID and FA along tract values. Musicianship will be added later
+		○ Remove 0's (Find and Replace), replace with empty cell
+		○ Delete empty cells (ctrl+g), delete to left to align
+		○ Copy and transpose so that first row is Part ID
+	
+	CC_body_Mean_Data <- FA_along_new_ROIs[c(1:46)]
+	CC_body_Mean_Data <- CC_body_Mean_Data[-c(1)]
+	CC_body_Mean_Data <- CC_body_Mean_Data[-c(2)]
+	CC_body_Mean_Data_long <- melt(CC_body_Mean_Data, id.vars="PartID")
+	Musicianship <-  FA_along_new_ROIs[c(2:3)]
+	CC_body_Mean_Data_final <- merge(CC_body_Mean_Data_long, Musicianship, by.x="PartID")
+	
+	ggplot(data=CC_body_Mean_Data_final, aes(x=variable, y=value, group=PartID, colour=as.factor(pre_play_an_instrument)))+ geom_line() + geom_point() + ggtitle("CC Body Mean FA Along Tract") + theme(legend.position="none") + scale_color_manual(name="pre_play_an_instrument", values=c("grey", "dark red"), labels=c("nonmusician", "musician")) + theme(plot.title = element_text(hjust = 0.5)) + xlab("Point Along Tract") + ylab("CC Body FA") + theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+	
+	File name: CC_body_splenium_FA_along_Tract
+
+
+
+**Bins** (I think this is to plot the CC body along the tract)
+bin_CC_body_Mean_Data <- bin(CC_body_Mean_Data[c(2:44)], nbins=10, labels=NULL, method="content", na.omit=TRUE)
+
+
+
+**Subtest Violinplots**
+a <- ggplot(FK_Dem_wCorrectedFitnessBMI_RelVariablesmusic_pre, aes(x=as.factor(pre_play_an_instrument), y=Pre_AchievementComposite_StandardScore, fill=as.factor(pre_play_an_instrument))) + geom_violin(trim=FALSE) + xlab("Achievement Composite") + ylab("Standard Score") + scale_x_discrete(labels=c('Nonmusician', 'Musician'))
+a + stat_summary(fun.data=mean_sdl, mult=1, geom="pointrange") + scale_fill_manual(values=c("gray", "darkred"))  + theme_bw() + theme(legend.position = "none", plot.title = element_text(hjust = 0.5), panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
